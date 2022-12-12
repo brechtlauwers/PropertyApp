@@ -139,17 +139,8 @@
                     <!-- 9. Delete -->
                     <Button Text="DELETE" Margin="0,20" Command="{Binding DeleteButtonCommand}"/>
 
-                    <Label FontSize="14"
-                            HorizontalOptions="StartAndExpand"
-                            Text="{Binding Property.Id}"
-                            TextColor="Black"
-                            VerticalTextAlignment="Center">
-                    </Label>
-
                 </StackLayout>
             </StackLayout>
         </StackLayout>
     </ScrollView>
-
-
 </ContentPage>
