@@ -1,0 +1,10 @@
+Connect to docker mysql container:
+$ docker exec -it property-db mysql -u property_user -p
+
+migrate db:
+$ docker exec -w /app/aspnet -it property-migration /root/.dotnet/tools/dotnet-ef database update
+
+
+
+
+$ docker exec -w /app/aspnet -it property-migration /root/.dotnet/tools/dotnet-ef migrations add TestMigration

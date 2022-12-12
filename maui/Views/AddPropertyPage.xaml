@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="maui.AddPropertyPage"
+             xmlns:model="clr-namespace:maui.Models"
+             xmlns:viewmodel="clr-namespace:maui.ViewModels"
+             x:DataType="viewmodel:AddPropertyVM"
+             Title="Add a property">
+
+    <ScrollView>
+        <StackLayout Margin="20,0">
+            <!-- 1 Title -->
+            <Label FontAttributes="Bold"
+                    FontSize="18"
+                    HorizontalOptions="StartAndExpand"
+                    Text="Title"
+                    TextColor="Black"
+                    VerticalTextAlignment="Center"
+                    Margin="0,15,0,0">
+            </Label>
+
+            <Entry HorizontalOptions="FillAndExpand"
+                    Placeholder="Enter Title"
+                    Text="{Binding Title.Value, Mode=TwoWay}">
+            </Entry>
+
+            <Label HorizontalTextAlignment="Center"
+                Text="{Binding Title.Error}"
+                TextColor="Red" />
+
+
+            <!-- 2 Address -->
+            <Label FontAttributes="Bold"
+                    FontSize="18"
+                    HorizontalOptions="StartAndExpand"
+                    Text="Address"
+                    TextColor="Black"
+                    VerticalTextAlignment="Center"
+                    Margin="0,15,0,0">
+            </Label>
+
+            <Entry HorizontalOptions="FillAndExpand"
+                    Placeholder="Enter Address"
+                    Text="{Binding Address.Value, Mode=TwoWay}">
+            </Entry>
+
+            <Label HorizontalTextAlignment="Center"
+                Text="{Binding Address.Error}"
+                TextColor="Red" />
+
+
+            <!-- 3 Description -->
+            <Label FontAttributes="Bold"
+                    FontSize="18"
+                    HorizontalOptions="StartAndExpand"
+                    Text="Description"
+                    TextColor="Black"
+                    VerticalTextAlignment="Center"
+                    Margin="0,15,0,0">
+            </Label>
+
+            <Editor HorizontalOptions="FillAndExpand"
+                    Placeholder="Enter Description"
+                    HeightRequest="150"
+                    Text="{Binding Description.Value, Mode=TwoWay}">
+            </Editor>
+            
+            <Label HorizontalTextAlignment="Center"
+                Text="{Binding Description.Error}"
+                TextColor="Red" />
+
+
+            <!-- 4 Price -->
+            <Label FontAttributes="Bold"
+                    FontSize="18"
+                    HorizontalOptions="StartAndExpand"
+                    Text="Price"
+                    TextColor="Black"
+                    VerticalTextAlignment="Center"
+                    Margin="0,15,0,0">
+            </Label>
+
+            <Entry HorizontalOptions="FillAndExpand"
+                    Placeholder="Enter Price"
+                    Keyboard="Numeric"
+                    Text="{Binding Price.Value, Mode=TwoWay}">
+            </Entry>
+
+            <Label HorizontalTextAlignment="Center"
+                Text="{Binding Price.Error}"
+                TextColor="Red" />
+
+
+            <!-- 5 Owner -->
+            <Label FontAttributes="Bold"
+                    FontSize="18"
+                    HorizontalOptions="StartAndExpand"
+                    Text="Owner"
+                    TextColor="Black"
+                    VerticalTextAlignment="Center"
+                    Margin="0,15,0,0">
+            </Label>
+
+            <Entry HorizontalOptions="FillAndExpand"
+                    Placeholder="Enter Owner"
+                    Text="{Binding Owner.Value, Mode=TwoWay}">
+            </Entry>
+
+            <Label HorizontalTextAlignment="Center"
+                Text="{Binding Owner.Error}"
+                TextColor="Red" />
+
+
+            <!-- 6 Surface -->
+            <Label FontAttributes="Bold"
+                    FontSize="18"
+                    HorizontalOptions="StartAndExpand"
+                    Text="Surface"
+                    TextColor="Black"
+                    VerticalTextAlignment="Center"
+                    Margin="0,15,0,0">
+            </Label>
+
+            <Entry HorizontalOptions="FillAndExpand"
+                    Placeholder="Enter Surface (m²)"
+                    Keyboard="Numeric"
+                    Text="{Binding Surface.Value, Mode=TwoWay}">
+            </Entry>
+
+            <Label HorizontalTextAlignment="Center"
+                Text="{Binding Surface.Error}"
+                TextColor="Red" />
+
+
+            <!-- 7 Bedrooms -->
+            <Label FontAttributes="Bold"
+                    FontSize="18"
+                    HorizontalOptions="StartAndExpand"
+                    Text="Bedrooms"
+                    TextColor="Black"
+                    VerticalTextAlignment="Center"
+                    Margin="0,15,0,0">
+            </Label>
+
+            <Entry HorizontalOptions="FillAndExpand"
+                    Placeholder="Enter # Bedrooms"
+                    Keyboard="Numeric"
+                    Text="{Binding Bedrooms.Value, Mode=TwoWay}">
+            </Entry>
+
+            <Label HorizontalTextAlignment="Center"
+                Text="{Binding Bedrooms.Error}"
+                TextColor="Red" />
+            
+
+            <!-- 8 Picture -->
+            <Label FontAttributes="Bold"
+                    FontSize="18"
+                    HorizontalOptions="StartAndExpand"
+                    Text="Picture"
+                    TextColor="Black"
+                    VerticalTextAlignment="Center"
+                    Margin="0,15,0,0">
+            </Label>
+
+            <Label HorizontalTextAlignment="Center"
+                Text="{Binding PicturePath.Error}"
+                TextColor="Red" />
+
+            <Button Text="Select Image" Command="{Binding SelectImageCommand}"/>
+
+            <Label Text="{Binding PicturePath.Value, Mode=TwoWay}" />
+            <Label Text="{Binding Title.Error}" TextColor="Red" HorizontalTextAlignment="Center" />
+
+            <!-- <Image Source="{Binding PicturePath}" Aspect="AspectFill"
+                        WidthRequest="90" HeightRequest="100"></Image> -->
+
+            <Button Text="Confirm" Margin="0,20" Command="{Binding ConfirmButtonCommand}"/>
+        </StackLayout>
+    </ScrollView>
+
+</ContentPage>
